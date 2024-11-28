@@ -10,8 +10,8 @@ const Note = (props) => {
   }
    
   return (
-    <div className="border w-56 h-20 mt-8 ml-3 relative shadow-xl shadow-gray-300">
-      <div className="ml-2 mt-2 font-oswald text-sm">
+    <div className="border w-56 mt-8 ml-3 relative shadow-xl shadow-gray-300">
+      <div className="ml-2 mt-2 font-oswald text-sm break-words">
         <div>{props.title}</div>
         <div>{props.content}</div>
         <div className='italic font-bold flex justify-center'>{today}
