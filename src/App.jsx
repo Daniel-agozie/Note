@@ -26,9 +26,8 @@ const App = () => {
       <Header />
       <CreateArea onAdd={addNote}/>
       {notes.map((notesItem, index) => {
-        return <Note key={index} id={index} title={notesItem.title} content={notesItem.content} onDelete={deleteNote}/>
+        return <Note key={index} id={index} title={notesItem.title} content={notesItem.content} onDelete={deleteNote} />
       })}
-
       <Footer />
     </div>
   )

@@ -37,8 +37,8 @@ const CreateArea = (props) => {
   }
 
   return (
-    <div className="pt-20 flex justify-center ">
-        <form className="border flex flex-col px-10 py-3 font-montserrat text-sm relative shadow-lg shadow-slate-400">
+    <div className="flex justify-center mt-3 pt-20 ">
+        <form className="border flex flex-col px-10 py-3 font-montserrat text-sm relative shadow-lg shadow-slate-400 w-80">
           {isExpand && <input className="outline-none" type="text" placeholder="Title" name="title" value={note.title} onChange={handleChange}/>}
 
           <textarea className="outline-none resize-none overflow-hidden" placeholder="Take a Note ..." name="content" value={note.content} onChange={handleChange} rows={isExpand ? '2' : '1'} onClick={handleExpand}/>
