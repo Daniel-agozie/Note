@@ -1,4 +1,3 @@
-import LensIcon from '@mui/icons-material/Lens';7
 import LayersClearIcon from '@mui/icons-material/LayersClear';
 
 const Header = () => {

@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        montserrat: ["Montserrat", "serif"]
+        oswald:["Oswald", "sans-serif"]
       },
     },
   },
