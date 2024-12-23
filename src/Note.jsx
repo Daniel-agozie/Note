@@ -3,7 +3,7 @@ import dayjs from 'dayjs';
 
 const Note = (props) => {
   const date = dayjs()
-  const today = date.format('ddd, MM D')
+  const today = date.format('dddd, MMMM D')
 
   function handleClick() {
     props.onDelete(props.id)
