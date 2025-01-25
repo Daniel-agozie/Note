@@ -1,27 +1,35 @@
-import DeleteIcon from '@mui/icons-material/Delete';
-import dayjs from 'dayjs';
+import React,{useContext, useState} from 'react'
+import { AddContext } from './context/ContextProvider';
+import {Zoom} from "@mui/material"
 
-const Note = (props) => {
-  const date = dayjs()
-  const today = date.format('dddd, MMMM D')
+const Note = () => {
+const  {note,handleChange,submitNote} = useContext(AddContext);
 
-  function handleClick() {
-    props.onDelete(props.id)
-  }
-   
+const [expand, setExpand] = useState(false)
+
+const handleExpand = () =>{
+  setExpand(true)
+}
+
   return (
-    <div className="border w-56 mt-8 ml-3 relative shadow-xl shadow-gray-300">
-      <div className="ml-2 mt-2 font-oswald text-sm break-words">
-        <div>{props.title}</div>
-        <div>{props.content}</div>
-        <div className='italic font-bold flex justify-center'>{today}
-        </div>
-        <button className="text-yellow-600 w-11 h-11 rounded-full absolute -bottom-2 right-2 text-xs font-montserrat font-bold outline-none" onClick={handleClick}>
-          <DeleteIcon />
-        </button>
-      </div>
-    </div>
+    <div className='pt-20 flex justify-center'>
 
+      <form className='flex flex-col p-2 relative shadow-xl w-80' onSubmit={submitNote}>
+        {expand && (
+          <input type='text' placeholder='Write a note' className='outline-none text-center text-sm mt-5' value={note.title} name='title' onChange={handleChange}/>
+        )}
+
+        <textarea rows={expand ? '2' : '1'} placeholder='Write the context' className='resize-none outline-none text-center text-sm mt-2 scrollbar-hide' value={note.content} name='content' onChange={handleChange} onClick={handleExpand}/>
+
+      <Zoom in={expand}>
+        <button className="bg-yellow-500 rounded-full w-8 h-8 absolute -bottom-4 right-2 text-xs font-bold" > 
+            Add
+          </button>
+      </Zoom>
+
+      </form>
+
+    </div>
   )
 }
 
